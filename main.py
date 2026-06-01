@@ -63,7 +63,13 @@ async def mute(interaction: discord.Interaction, member: discord.Member):
     await interaction.response.send_message(f"🔇 {member.mention} muted for 10 minutes.")
 
 # ─── MUSIC ───────────────────────────────
-YTDL_OPTIONS = {"format": "bestaudio", "noplaylist": True}
+YTDL_OPTIONS = {
+    "format": "bestaudio",
+    "noplaylist": True,
+    "quiet": True,
+    "no_warnings": True,
+    "source_address": "0.0.0.0"
+}
 FFMPEG_OPTIONS = {"options": "-vn"}
 
 @bot.tree.command(name="play", description="Play a song from YouTube")
