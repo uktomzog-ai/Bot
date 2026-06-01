@@ -14,7 +14,7 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 # ─── READY ───────────────────────────────
 @bot.event
 async def on_ready():
-    await bot.tree.sync()
+    await bot.tree.sync(guild=discord.Object(id=1291031538116460646))
     print(f"Logged in as {bot.user}")
 
 # ─── WELCOME MESSAGE ─────────────────────
